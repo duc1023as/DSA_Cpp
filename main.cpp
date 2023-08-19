@@ -1,12 +1,12 @@
 #include<iostream>
 #include<vector>
 #include<string>
-#include"mySearch/mySearch.h"
+// #include"mySearch/mySearch.h"
+#include"mySort/mySort.h"
 
 int main(){
     std::vector<int> vec;
     int size;
-    int number;
     std::cout<<"PLease enter your vector size:\n";
     std::cin>>size;
     std::cout<<"Please enter your vector element\n";
@@ -15,11 +15,11 @@ int main(){
         std::cin>>temp;
         vec.push_back(temp);
     }
-    mySearch mySearch1(vec);
-    mySearch1.display();
-    std::cout<<"Please enter your number that you want to find it:\n";
-    std::cin>>number;
-    std::cout<<"Result:"<<mySearch1.Sequential(number)<<"\n";
-    std::cout<<"Result:"<<mySearch1.Binary(number)<<"\n";
+    mySort mySort1(vec);
+    mySort1.display();
+    mySort1.my_Merge_Sort(0,size-1);
+    // mySort1.my_Quick_sort(0,size-1);
+    mySort1.display();
+    // mySort1.my_Bubble_sort();
     return 0;
 }

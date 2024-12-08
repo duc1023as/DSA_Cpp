@@ -131,6 +131,29 @@ public:
             current_node->next = new_node; 
             if(current_node == tail)
                 tail = new_node;
+
+            // another implementation
+            // Node* newNode = new Node(value);
+            // Node* current = tail->next; // Start from head
+            // int count = 0;
+
+            // while (current != tail && count < index - 1) {
+            //     current = current->next;
+            //     count++;
+            // }
+
+            // if (count == index - 1) {
+            //     newNode->next = current->next;
+            //     current->next = newNode;
+
+            //     // If inserted after the tail, update the tail
+            //     if (current == tail) {
+            //         tail = newNode;
+            //     }
+            // } else {
+            //     cout << "Index out of bounds!" << endl;
+            //     delete newNode;
+            // }
         }
     }
 
@@ -160,6 +183,30 @@ public:
                 tail = current_node;
             delete tmp;
         }
+
+        //another implementation
+        // Node* current = tail->next; // Start from head
+        // int count = 0;
+
+        // while (current->next != tail->next && count < index - 1) {
+        //     current = current->next;
+        //     count++;
+        // }
+
+        // if (current->next == tail->next || count != index - 1) {
+        //     cout << "Index out of bounds!" << endl;
+        //     return;
+        // }
+
+        // Node* nodeToDelete = current->next;
+        // current->next = nodeToDelete->next;
+
+        // // If the deleted node is the tail, update the tail pointer
+        // if (nodeToDelete == tail) {
+        //     tail = current;
+        // }
+
+        // delete nodeToDelete;
     }
 
     void print_list()
